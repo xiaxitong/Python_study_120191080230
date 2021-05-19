@@ -15,12 +15,13 @@ import socket
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 #AF_INET指定使用IPv4。SOCK_STREAM指定使用面向流的TCP协议
 
-s.connect(("www.sina.com.cn",80))
+s.connect(('www.baidu.com',80))
 #建立连接
 #新浪网站的IP地址可以通过域名自动转换，而各种不同的服务有着固定的标准端口号，提供网页服务的是80端口。
 
-s.send(b'GET/HTTP/1.1\r\nHost:www.sina.com.cn\r\nConnection:close\r\n\r\n')
+s.send(b'GET / HTTP/1.1\r\nHost: www.baidu.com\r\nConnection: close\r\n\r\n')
 #发送请求，要求返回新浪首页的内容
+####  注意上面语句中空格的使用
 
 buffer = []
 
@@ -36,7 +37,7 @@ s.close()
 #将接收到的HTTP头和网页分离一下，把HTTP头打印出来，网页内容保存到文件
 header,html = data.split(b'\r\n\r\n',1)
 print(header.decode('utf-8'))
-with open('sina.html','wb') as f:
+with open('baidu.html', 'wb') as f:
     f.write(html)
 
 

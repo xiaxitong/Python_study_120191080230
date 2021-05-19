@@ -16,10 +16,11 @@ def maan():
     local_addr = ('',9999)
 
     udp_socket.bind(local_addr)
+
     #接收数据
     recv_data = udp_socket.recvfrom(1024)
     #打印数据
-    print(recv_data)
+    print(recv_data[0].decode('gbk'))
     udp_socket.close()
 
 if __name__ == "__main__":
