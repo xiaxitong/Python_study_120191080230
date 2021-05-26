@@ -9,6 +9,8 @@
 this is functiondescription
 '''
 # import module your need
+#编写一个装饰器，为多个函数加上认证的功能（必须输入用户的账号密码，才能调用这个函数）
+
 def decrator(func):
     username = input("输入用户名：")
     secret = input("输入密码：")

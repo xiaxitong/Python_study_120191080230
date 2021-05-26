@@ -9,6 +9,8 @@
 this is functiondescription
 '''
 # import module your need
+# 编写一个装饰器，能计算其他函数的运行时间；
+
 import time,functools
 def metric(func):
     def wrapper(*a,**b):

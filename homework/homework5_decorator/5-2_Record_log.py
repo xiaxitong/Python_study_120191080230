@@ -9,8 +9,9 @@
 this is functiondescription
 '''
 # import module your need
+# 编写一个装饰器，能记录其他函数调用的日志，将日志写入到文件中；
 from datetime import datetime
-filename = '运行日志.txt'
+filename = 'log.txt'
 def timmer(func):
     def wrapper(*a,**b):
         with open(filename, 'w', encoding='utf-8') as f:
