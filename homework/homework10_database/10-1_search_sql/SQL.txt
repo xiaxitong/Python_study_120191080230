@@ -1,0 +1,50 @@
+'''
+1.查询所有男生的姓名，年龄，所在班级名称；
+'''
+# sql = "SELECT * FROM sites WHERE sex ='男'"
+
+'''
+2.查询所有查询编号小于4或没被删除的学生；
+'''
+# sql = "SELECT * FROM sites WHERE id < 4"
+
+'''
+3.查询姓黄并且“名”是一个字的学生；
+'''
+# sql = "SELECT * FROM sites WHERE name = '黄蓉'"
+
+'''
+4.查询编号是1或3或8的学生
+'''
+# sql = "SELECT * FROM sites WHERE id = 1 || id = 3 || id = 8"
+
+'''
+5.查询编号为3至8的学生
+'''
+# sql = "SELECT * FROM sites WHERE id >= 3 && id <= 8"
+
+'''
+6.查询未删除男生信息，按年龄降序
+'''
+# sql = "SELECT * FROM sites WHERE sex ='男' ORDER BY age DESC"
+
+'''
+7.查询女生的总数
+'''
+# sql = "SELECT * FROM sites WHERE sex ='女'"
+
+'''
+8.查询学生的平均年龄
+'''
+# sql = "SELECT age FROM sites"
+
+'''
+9.分别统计性别为男/女的人年龄平均值
+'''
+# sql = "SELECT age FROM sites WHERE sex ='女'"
+# # sql = "SELECT age FROM sites WHERE sex ='男'"
+
+'''
+10.按照性别来进行人员分组如下显示（group by + group_concat()）；
+'''
+sql = "SELECT sex,GROUP_CONCAT(name) FROM sites GROUP BY sex"
