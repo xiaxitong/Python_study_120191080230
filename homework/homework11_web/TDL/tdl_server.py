@@ -1,10 +1,11 @@
 from flask import render_template, redirect, request, flash, url_for, abort
 from __init__ import main, db
 import models
-from flask_login import login_required
-# from flask_login import login_required, current_user, logout_user, login_user
-# from forms import LoginForm, AddUserForm, ToDoForm, ResetInfoForm
-from forms import  ToDoForm
+from models import Users,ToDoList
+# from flask_login import login_required
+from flask_login import login_required, current_user, logout_user, login_user
+from forms import LoginForm, AddUserForm, ToDoForm, ResetInfoForm
+# from forms import  ToDoForm
 from datetime import datetime
 
 

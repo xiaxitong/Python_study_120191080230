@@ -1,6 +1,6 @@
 from flask import Flask
 from config import config
-from __init__ import main, db,bootstrap
+from __init__ import main, db,bootstrap,login_manager
 import os
 import json
 
@@ -37,7 +37,7 @@ app = Flask(__name__)
 app.config.from_object(config[config_type])
 bootstrap.init_app(app)
 db.init_app(app)
-# login_manager.init_app(app)
+login_manager.init_app(app)
 app.register_blueprint(main)
 
 if not os.path.isfile(config['default'].SQLALCHEMY_DATABASE_URI[10:]):

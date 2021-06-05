@@ -1,5 +1,5 @@
 from flask import Blueprint
-# from flask_login import LoginManager
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 import sys
 from flask_bootstrap import Bootstrap
@@ -7,10 +7,10 @@ from flask_bootstrap import Bootstrap
 main = Blueprint('main', __name__, template_folder='templates')
 db = SQLAlchemy()
 bootstrap = Bootstrap()
-# login_manager = LoginManager()
-# login_manager.session_protection = 'strong'
-# login_manager.login_view = 'main.login'
-# login_manager.login_message = '请登录账号'
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'main.login'
+login_manager.login_message = '请登录账号'
 
 import tdl_server
 import tdl_client
